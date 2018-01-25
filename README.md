@@ -71,6 +71,9 @@ map.put("appid", "otn");//固定参数 不知道干嘛的
 ```
 result_code  0：成功  其他：错误
 
+## 4.实现界面截图
+![image](http://oaly5871x.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180125121024.jpg)
+
 ------
 
  到这里 登录流程走完 我在分析查询余票列表 请期待第二篇
