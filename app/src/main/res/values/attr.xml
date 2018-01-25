@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="titlebarattr">
+        <attr name="titlestr" format="string" />
+        <attr name="ifshowlogo" format="boolean" />
+        <attr name="ifshowleftbutton" format="boolean" />
+    </declare-styleable>
+
+</resources>

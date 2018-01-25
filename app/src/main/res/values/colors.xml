@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff8000</color>
+    <color name="colorPrimaryDark">#ff8000</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="translucent">#4DFF4081</color><!-- 半透明 -->
+    <color name="transparent">#00FFFFFF</color><!-- 透明 -->
+    <color name="loading_transparent">#A6333333</color><!-- 半透明 -->
+    <color name="title_bar_bg">#ff8138</color>
+
+</resources>
