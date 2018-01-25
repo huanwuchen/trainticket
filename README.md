@@ -75,7 +75,7 @@ result_code  0：成功  其他：错误
 
  到这里 登录流程走完 我在分析查询余票列表 请期待第二篇
  
- 本文用到的代码在[github地址](https://note.youdao.com/) 欢迎star
+ 本文用到的代码在[github地址](https://github.com/huanwuchen/trainticket) 欢迎star
  
  有需要的朋友 请自行下载
  
