@@ -1,7 +1,10 @@
 package com.test.trainticket.net;
 
+import android.app.Activity;
+
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.model.HttpHeaders;
 import com.lzy.okgo.model.Response;
 
 import java.util.HashMap;
@@ -12,13 +15,15 @@ import java.util.HashMap;
 
 public class NetWorks {
 
+    public static final String UA = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) " +
+            "Chrome/50.0.2661.102 Safari/537.36";
 
-    public static void get(String url, HashMap<String, String> map, final IStringCallBack callBack) {
+    public static void get(Activity mActivity, String url, HashMap<String, String> map, final IStringCallBack callBack) {
+
+        HttpHeaders httpHeaders = getHeaders();
         OkGo.<String>get(url)
                 .params(map)
-                .headers("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) " +
-                        "Chrome/59.0.3071.115 Safari/537.36")
-                .headers("Referer", "https://kyfw.12306.cn/otn/login/init")
+                .headers(httpHeaders)
                 .execute(new StringCallback() {
 
                     @Override
@@ -69,6 +74,18 @@ public class NetWorks {
                     }
                 });
 
+    }
+
+
+    public static HttpHeaders getHeaders() {
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.put("User-Agent", UA);
+        headers.put("Connection", "keep-alive");
+        headers.put("Host", "kyfw.12306.cn");
+        headers.put("Connection", "keep-alive");
+        headers.put("Referer", "https://kyfw.12306.cn/otn/leftTicket/init");
+        return headers;
     }
 
 

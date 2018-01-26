@@ -1,5 +1,6 @@
 package com.test.trainticket.ui.activity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.v4.content.ContextCompat;
@@ -60,6 +61,8 @@ public class LoginActivity extends BaseActivity {
 
     private List<String> yanList;
 
+    private boolean flag = false;
+
     @Override
     protected int getLayoutId() {
         return R.layout.activity_main;
@@ -67,6 +70,9 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        if (getIntent().hasExtra("flag")) {
+            flag = true;
+        }
         yanList = new ArrayList<>();
         loadInitPage();//加载验证码
 
@@ -141,7 +147,7 @@ public class LoginActivity extends BaseActivity {
         cookieStore.removeAllCookie();
 
         yzm_progressbar.setVisibility(View.VISIBLE);
-        NetWorks.get(Constants.INITPAGE_URL, new HashMap<String, String>(), new IStringCallBack() {
+        NetWorks.get(this, Constants.INITPAGE_URL, new HashMap<String, String>(), new IStringCallBack() {
             @Override
             public void onResponse(String response) {
 
@@ -286,6 +292,12 @@ public class LoginActivity extends BaseActivity {
                 }
                 if (result.getResult_code().equals("0")) {
                     Toast.makeText(LoginActivity.this, "恭喜你 登录成功", Toast.LENGTH_SHORT).show();
+                    if (flag) {
+                        finish();
+                    } else {
+                        startActivity(new Intent(LoginActivity.this, TicketListActivity.class));
+                        finish();
+                    }
                 } else {
                     Toast.makeText(LoginActivity.this, result.getResult_message(), Toast.LENGTH_SHORT).show();
                 }

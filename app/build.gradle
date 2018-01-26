@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'org.greenrobot.greendao'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
@@ -19,6 +19,15 @@ android {
     }
 }
 
+greendao {
+    //指定数据库schema版本号，迁移等操作会用到
+    schemaVersion 1
+    //通过gradle插件生成的数据库相关文件的包名，默认为你的entity所在的包名
+    daoPackage 'com.test.trainticket.model.db.dao'
+    //这就是我们上面说到的自定义生成数据库文件的目录了，可以将生成的文件放到我们的java目录中，而不是build中，这样就不用额外的设置资源目录了
+    targetGenDir 'src/main/java'
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -32,5 +41,11 @@ dependencies {
     compile 'com.qianwen:okhttp-utils:3.8.0'
     compile 'com.alibaba:fastjson:1.1.67.android'
     compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'org.greenrobot:greendao:3.2.2'
+    compile 'com.contrarywind:Android-PickerView:3.2.7'
+    compile 'com.facebook.stetho:stetho:1.5.0'
+    compile 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+    compile 'com.zhy:base-adapter:3.0.3'
+    compile 'org.jsoup:jsoup:1.11.2'
     testCompile 'junit:junit:4.12'
 }

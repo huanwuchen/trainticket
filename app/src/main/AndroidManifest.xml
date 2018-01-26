@@ -20,13 +20,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activity.LoginActivity">
+        </activity>
+        <activity android:name=".ui.activity.TicketListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.TicketListActivity">
+        <activity android:name=".ui.activity.SelectAddressActivity">
+        </activity>
+        <activity android:name=".ui.activity.UserActivity">
         </activity>
     </application>
 

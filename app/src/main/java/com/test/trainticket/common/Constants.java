@@ -32,7 +32,14 @@ public class Constants {
     /**
      * 初始化页面 先访问这个
      */
-    public static final String INITPAGE_URL = "https://kyfw.12306.cn/otn/index/init";
+    public static final String INITPAGE_URL = "https://kyfw.12306.cn/otn/login/init";
+
+    /**
+     * 初始化页面 先访问这个
+     */
+    public static final String INITPAGEQUERY_URL = "https://kyfw.12306.cn/otn/leftTicket/init";
+
+
 
 
 }
